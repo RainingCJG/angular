@@ -1,0 +1,24 @@
+<div class="container white-top" controller="userInfoCtrl">
+	<div class="row">
+		<div role="tabpanel" class="col-md-2">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs nav-pills nav-stacked text-center" role="tablist">
+				<li role="presentation" ng-class="{active:link==1}" ng-click="link=1">
+					<a aria-controls="home" role="tab" data-toggle="tab" data-target="#home" ng-click="tabsToggle()">个人资料</a>
+				</li>
+				<li role="presentation" ng-class="{active:link==2}" ng-click="link=2">
+					<a aria-controls="tab" role="tab" data-toggle="tab" data-target="#tab">借阅信息</a>
+				</li>
+				<li role="presentation" ng-class="{active:link==3}" ng-click="link=3">
+					<a aria-controls="tab" role="tab" data-toggle="tab" data-target="#tab">修改资料</a>
+				</li>
+			</ul>
+		</div>
+		<!-- Tab panes -->
+		<div class="tab-content col-md-10" style="height: 420px;">
+			<div role="tabpanel" class="tab-pane" ng-class="{active:link==1}" id="home" user-info></div>
+			<div role="tabpanel" class="tab-pane" ng-class="{active:link==2}" id="tab" borrow-info></div>
+			<div role="tabpanel" class="tab-pane" ng-class="{active:link==3}" id="tab" revise-info></div>
+		</div>
+	</div>
+</div>

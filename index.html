@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图书管理系统</title>
+	<!-- 引入外部css文件 -->
+	<link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="public/style/index.css">
+	<link rel="stylesheet" type="text/css" href="public/style/login.css">
+</head>
+<body ng-app="libraryMassage"> 
+	<div class="index-container" ng-controller="indexController">
+		<h1 class="text-center">图书管理系统</h1>
+		<div ui-view>
+			<div class="mir">
+				<a ui-sref="login" class="text-center submir"><span class="mask">登录/注册</span></a>
+				<a ui-sref="borrow" class="text-center submir"><span class="mask">图书借阅</span></a>
+				<a ui-sref="back" class="text-center submir"><span class="mask">图书归还</span></a>
+				<a ui-sref="info" class="text-center submir"><span class="mask">个人信息</span></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 引入外部js文件 -->
+	<script type="text/javascript" src="public/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="public/js/angular.min.js"></script>
+	<script type="text/javascript" src="public/js/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="public/js/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/route.js"></script>
+	
+	<script type="text/javascript" src="app/controllers/login.js"></script>
+	<script type="text/javascript" src="app/controllers/borrow.js"></script>
+	<script type="text/javascript" src="app/services/borrowService.js"></script>
+	<script type="text/javascript" src="app/directives/userInfoDirective.js"></script>
+	<script type="text/javascript" src="app/controllers/booksInfo.js"></script>
+	<script type="text/javascript" src="app/controllers/userInfoCtrl.js"></script>
+	<script type="text/javascript" src="app/directives/borrowInfoDirective.js"></script>
+	<script type="text/javascript" src="app/services/borrowInfoService.js"></script>
+	<script type="text/javascript" src="app/directives/reviseInfoDirective.js"></script>
+</body>
+</html>
+

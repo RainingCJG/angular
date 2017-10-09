@@ -1,0 +1,8 @@
+div[ng-controller="loginctrl"]{
+	width: 300px;
+	margin: 40px auto 0;
+}
+
+div[ng-controller="loginctrl"] span.form-control-feedback{
+	color: #ccc;
+}

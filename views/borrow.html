@@ -1,0 +1,53 @@
+<div class="container" ui-view="booksInfoviews">
+	<div ng-controller="borrowctrl">
+		<form action="" method="POST" role="form" class="form-horizontal">
+			<div class="form-group">
+				<label for=""></label>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="input-group">
+							<input type="text" class="form-control" id="" placeholder="请输入您要查找的书名" ng-model="bookname">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-primary">搜索</button>
+							</span>
+						</div>
+					</div>
+					<div class="col-md-offset-11">
+						<a class="btn btn-default" ui-sref="index">返回</a>
+					</div>
+				</div>
+			</div>
+		</form>
+		<table class="table table-bordered table-striped table-hover" style="background-color: #fff">
+			<thead>
+				<tr>
+					<th>图书编号</th>
+					<th>书名</th>
+					<th>作者</th>
+					<th>数量</th>
+					<th>放置位置</th>
+					<th>定价</th>
+					<th>总价</th>
+					<th>图书简介</th>
+					<th>其他</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="v in bookData[currentPage-1]">
+					<td>{{v.id}}</td>
+					<td>{{v.name}}</td>
+					<td>{{v.editor}}</td>
+					<td>{{v.number}}</td>
+					<td>{{v.place}}</td>
+					<td>{{v.price|currency : '￥'}}</td>
+					<td>{{(v.price*v.number)|number:2|currency : '￥'}}</td>
+					<td>{{v.intro}}</td>
+					<td><a href="" ng-click="getDetail(v)">详情</a></td>
+				</tr>
+			</tbody>
+		</table> 
+		<div class="col-md-offset-3 col-md-6 text-center">
+			<uib-pagination boundary-links="true" total-items="len" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false" num-pages="numPages"></uib-pagination>
+		</div>			
+	</div>
+</div>

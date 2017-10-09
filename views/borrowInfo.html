@@ -1,0 +1,33 @@
+<div class="col-md-offset-1">
+	<h4 class="text-info">借阅信息：</h4><br>
+	<div class="row">
+		<div class="col-md-9 col-md-offset-2">
+			<table class="table table-hover table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>图书编号</th>
+						<th>书名</th>
+						<th>借阅日期</th>
+						<th>逾期日期</th>
+						<th>是否归还</th>
+						<th>扣费</th>
+						<th>是否续借</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="v in borrowInfo">
+						<td>{{$index}}</td>
+						<td>{{v.id}}</td>
+						<td>{{v.name}}</td>
+						<td>{{v.borrowDate}}</td>
+						<td>{{v.backDate}}</td>
+						<td>{{v.back}}</td>
+						<td>{{v.charge|number:2|currency:'￥'}}</td>
+						<td>{{v.continue}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
